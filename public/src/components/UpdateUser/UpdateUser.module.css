@@ -1,0 +1,33 @@
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border:none;
+    box-shadow:tomato;
+    padding: 20px;
+
+  }
+  input {
+    width: 100%;
+    padding: 6px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid gray;
+  }
+  .submitBtn{
+    background-color: rgba(24, 108, 75, 64%);
+    color:white;
+    padding:8px 14px;
+    margin: 0 auto;
+    margin-top: 16px;
+    border: none;
+    border-radius: 4px;
+    margin: 0 40%;
+  }
+  button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+  }
