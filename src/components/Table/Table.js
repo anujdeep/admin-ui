@@ -100,7 +100,7 @@ function Table(props){
         </table>
         <div style={{display:"flex",marginTop:"20px"}}>
         <button className={classes.deleteSelectedBtn} onClick={deleteSelectedUser}>Delete Selected</button>
-        <Pagination count={5} color="secondary" sx={{ml:50}} page={props.page} onChange={changePage}/>
+        <Pagination count={5} color="secondary" sx={{ml:50}} page={props.page} onChange={changePage} showFirstButton showLastButton/>
         </div>
         </>
     )
