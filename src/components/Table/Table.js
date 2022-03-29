@@ -81,7 +81,7 @@ function Table(props){
            <tbody>
             {props.userList.map((user)=>{
                 return (
-                <tr key={user.id}>
+                <tr key={user.id} className={user.isChecked ? classes.gray : ''}>
                     <td><input type="checkbox" value={user.id} checked={ user.isChecked} 
                     onChange={selectOrDeselectUser}/></td>
                     <td>{user.name}</td>
