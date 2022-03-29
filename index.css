@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+.red{
+    color: red;
+}
+.border{
+    border:2px solid green;
+    border-radius: 6px;
+}
+
