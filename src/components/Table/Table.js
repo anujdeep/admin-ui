@@ -13,6 +13,7 @@ function Table(props){
     const [userToEdit,setUserToEdit]=useState([]);
     
     const changePage = (event, value) => {
+        setSelectedOrDeselected(false)
         props.onChangePage(value);
     };
     const searchBox=<SearchBox onInputChange={searchUser} placeholder="Search by name, email or role"/>
@@ -32,8 +33,10 @@ function Table(props){
 
     function selectOrDeselectAll(){
         
-        props.onSelectOrDeselectAll(!selectedOrDeselected);
-        setSelectedOrDeselected((prevState)=>!prevState);
+        setSelectedOrDeselected((prevState)=>{
+            props.onSelectOrDeselectAll(!prevState);
+           return  !prevState
+        });
         
     }
 
@@ -70,8 +73,8 @@ function Table(props){
         <table className={classes.users}>
             <thead>
             <tr>
-            <th><input type="checkbox" value={selectedOrDeselected}
-             onClick={selectOrDeselectAll} /></th>
+            <th><input type="checkbox" checked={selectedOrDeselected}
+             onChange={selectOrDeselectAll} /></th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
@@ -100,7 +103,7 @@ function Table(props){
         </table>
         <div style={{display:"flex",marginTop:"20px"}}>
         <button className={classes.deleteSelectedBtn} onClick={deleteSelectedUser}>Delete Selected</button>
-        <Pagination count={5} color="secondary" sx={{ml:50}} page={props.page} onChange={changePage} showFirstButton showLastButton/>
+        <Pagination count={props.totalPage} color="secondary" sx={{ml:50}} page={props.page} onChange={changePage} showFirstButton showLastButton/>
         </div>
         </>
     )
